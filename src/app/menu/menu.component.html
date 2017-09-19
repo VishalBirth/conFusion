@@ -18,22 +18,5 @@
                 </md-grid-tile>
             </md-grid-list> 
         </div>  
-        <div fxFlex *ngIf="selectedDish">
-            <md-card>
-                <md-card-header>
-                    <md-card-title>
-                        <h3>{{selectedDish.name | uppercase}}</h3>
-                    </md-card-title>
-                </md-card-header>
-                <img mdCardImage src="{{selectedDish.image}}" alt="{{selectedDish.image}}">
-                <md-card-content>
-                    {{selectedDish.description}}
-                </md-card-content>
-                <md-card-actions align="start">
-                    <button md-button (click)="onAction1">Like</button>
-                    <button md-button (click)="onAction1">Share</button>
-                    
-                </md-card-actions>
-            </md-card>
-        </div>
+        <app-dish-detail></app-dish-detail>
 </div>
