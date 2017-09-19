@@ -1,13 +1,39 @@
 <div class="container"
       fxLayout="column"
       fxLayoutGap="10px">
-      <md-list fxFlex>
-            <md-list-item *ngFor="let dish of dishes">
-                <img mdListAvatar src={{dish.image}} alt={{dish.name}}>
-                <h1 mdLine>{{dish.name}}</h1>
-                <p mdLine>
-                    <span>{{dish.description}}</span>
-                </p>
-          </md-list-item>
-      </md-list>
+        <div fxFlex>
+            <div>
+                <h3>Menu</h3>
+                <hr>
+            </div>
+        </div>
+
+        <div fxFlex>
+            <md-grid-list cols="2" rowHeight="200px" >
+                <md-grid-tile *ngFor="let dish of dishes" [colspan]="1" [rowspan]="1">
+                    <img height="200px" src={{dish.image}} alt={{dish.name}}>
+                    <md-grid-tile-footer>
+                        <h1 mdLine>{{dish.name | uppercase}}</h1>    
+                    </md-grid-tile-footer>
+                </md-grid-tile>
+            </md-grid-list> 
+        </div>  
+        <div fxFlex *ngIf="selectedDish">
+            <md-card>
+                <md-card-header>
+                    <md-card-title>
+                        <h3>{{selectedDish.name | uppercase}}</h3>
+                    </md-card-title>
+                </md-card-header>
+                <img mdCardImage src="{{selectedDish.image}}" alt="{{selectedDish.image}}">
+                <md-card-content>
+                    {{selectedDish.description}}
+                </md-card-content>
+                <md-card-actions align="start">
+                    <button md-button (click)="onAction1">Like</button>
+                    <button md-button (click)="onAction1">Share</button>
+                    
+                </md-card-actions>
+            </md-card>
+        </div>
 </div>
