@@ -1,22 +1,20 @@
-<div class="container"
-      fxLayout="column"
-      fxLayoutGap="10px">
-        <div fxFlex>
-            <div>
-                <h3>Menu</h3>
-                <hr>
-            </div>
+<div class="container" fxLayout="column" fxLayoutGap="10px">
+    <div fxFlex>
+        <div>
+            <h3>Menu</h3>
+            <hr>
         </div>
+    </div>
 
-        <div fxFlex>
-            <md-grid-list cols="2" rowHeight="200px" >
-                <md-grid-tile *ngFor="let dish of dishes" (click) = "onSelect(dish)" [colspan]="1" [rowspan]="1">
-                    <img height="200px" src={{dish.image}} alt={{dish.name}}>
-                    <md-grid-tile-footer>
-                        <h1 mdLine>{{dish.name | uppercase}}</h1>    
-                    </md-grid-tile-footer>
-                </md-grid-tile>
-            </md-grid-list> 
-        </div>  
-        <app-dish-detail [dish]="selectedDish"></app-dish-detail>
+    <div fxFlex>
+        <md-grid-list cols="2" rowHeight="200px">
+            <md-grid-tile *ngFor="let dish of dishes" (click)="onSelect(dish)" [colspan]="1" [rowspan]="1">
+                <img height="200px" src={{dish.image}} alt={{dish.name}}>
+                <md-grid-tile-footer>
+                    <h1 mdLine>{{dish.name | uppercase}}</h1>
+                </md-grid-tile-footer>
+            </md-grid-tile>
+        </md-grid-list>
+    </div>
+    <app-dish-detail [dish]="selectedDish"></app-dish-detail>
 </div>
