@@ -12,13 +12,18 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './menu/menu.component';
 import { DishService } from './services/dish.service';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+
+import { AppRoutingModule } from './app-routing/app-routing.module';
 
 @NgModule({
     declarations: [
-        AppComponent, MenuComponent, DishDetailComponent, HeaderComponent, FooterComponent
+        AppComponent, MenuComponent, DishDetailComponent, HeaderComponent, FooterComponent, HomeComponent, AboutComponent, ContactComponent
     ],
     imports: [
-        BrowserModule, BrowserAnimationsModule, MaterialModule, FlexLayoutModule
+        BrowserModule, BrowserAnimationsModule, MaterialModule, FlexLayoutModule, AppRoutingModule
     ],
     providers: [DishService],
     bootstrap: [AppComponent]
